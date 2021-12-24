@@ -44,8 +44,8 @@ while rodando:
         elif (opcao == 2):
             #imprimindo historico de calculos
             print("\nHistorico da Calculadora:\n")
-            for calculo in historico:
-                print(f"{calculo}")
+            for index, calculo in enumerate(historico):
+                print(f"{index+1}. {calculo}")
         elif (opcao == 3):
             #saindo do loop principal
             rodando = False
