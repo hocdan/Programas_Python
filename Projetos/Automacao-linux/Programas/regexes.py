@@ -24,7 +24,7 @@ while rodando:
         novoRegex = input("Nova expressao regular: ")
         novoRegex.encode('unicode_escape') #transformando string em string bruta
         numeroTelRegex = re.compile(novoRegex) #criando novo objeto de expressoes regulares
-        print(f"Nova expressa regular ({novoRegex}) gravada no identificador!")
+        print(f"Nova expressa regular ( {novoRegex} ) gravada no identificador!")
     elif (opcao == '3'):
         rodando = False
     else:
