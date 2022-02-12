@@ -9,17 +9,33 @@
     tos, equipamento e inventário, bem como saber a sua localizacao atual.
     -> Por enquanto so havera uma unica classe chamada de Heroi. 
 '''
+
 #realizando import das fases e de outras coisas
 from Objetos import *
-import Menu         
+import os
+import sys
+#configurando para poder usar arquivos que se encontram em outro diretorio
+novoDiretorio = os.path.join(os.getcwd() + '/Caminhos/')
+sys.path.insert(1, novoDiretorio) #adicionando diretorio à variavel system's path 
+
+import menu
+import criacao
+import rota01         
 
 #Codigo principal
 gamestate = "menu"
-
-if __name__ == "__main__":
-    #inicializando menu
-    if gamestate == "menu":
-        Menu.run()
-
+rodando = True
+while rodando:
+    if __name__ == "__main__":
+        #inicializando jogo
+        if (gamestate == "menu"):
+            gamestate = menu.run()
+        elif (gamestate == "criacao"):
+            gamestate = criacao.run()
+        elif (gamestate == "rota01"):
+            gamestate = rota01.run()
+        else:
+            rodando = False
+print("Encerrando jogo...")
 
 
