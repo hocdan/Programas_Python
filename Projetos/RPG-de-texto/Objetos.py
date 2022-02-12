@@ -35,7 +35,7 @@ class Heroi:
             self.inventario = inventario
         #string, uma nomeacao exclusiva que o jogador pode ter
         if titulo is None:
-            self.titulo = ""
+            self.titulo = "Sem titulo"
         #list, titulos que o jogador acumulou no jogo (infinito)
         if titulos is None:
             self.titulos = []
@@ -64,9 +64,9 @@ class Heroi:
             self.moedas -= moedas
             return True #debitando compra do dinheiro do jogador
 
-    def perderVida(self):
-        if (self.vida >= 1):
-            self.vida -= 1
+    def perderVida(self, dano):
+        if (self.vida - dano >= 1):
+            self.vida -= dano
             return True #o jogador sofreu dano
         else:
             return False #o jogador morreu
@@ -198,6 +198,5 @@ class Item:
         self.nome = nome #string, nome do item
         self.info = info #string, descricao do item
         self.efeito = efeito #string, diz o que o item faz ao ser usado
-
 
 
