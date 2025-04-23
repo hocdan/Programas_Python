@@ -29,8 +29,7 @@ class App():
         pyxel.init(520, 620, title = "Jogo da velha 1.0")
         pyxel.mouse(True)
         #carregando imagens dos icones
-        pyxel.images[0].load(0, 0, "/home/hacdan/Documents/Linux/Programacao/Python/Projetos/Pyxel/Assets/return40x40.png")
-        pyxel.images[1].load(0, 0, "/home/hacdan/Documents/Linux/Programacao/Python/Projetos/Pyxel/Assets/trash40x41.png")
+        pyxel.load("/home/hacdan/Documents/Linux/Programacao/Python/Projetos/Pyxel/Assets/icones.pyxres")
         pyxel.run(self.update, self.draw)
 
     def update(self):
@@ -131,8 +130,8 @@ class App():
             pyxel.text(menu[0]+50, menu[1]+150, "JOGO EM ANDAMENTO", pyxel.COLOR_PEACH)
         #desenhando botoes
         pyxel.rect(botaoVelha[0], botaoVelha[1], botaoVelha[2], botaoVelha[3], pyxel.COLOR_GREEN)
-        pyxel.blt(botaoVelha[0]+18, botaoVelha[1]+18, 0, 0, 0, 40, 40)
+        pyxel.blt(botaoVelha[0]+14, botaoVelha[1]+14, 0, 0, 56, 48, 48, pyxel.COLOR_BLACK)
         pyxel.rect(botaoZerar[0], botaoZerar[1], botaoZerar[2], botaoZerar[3], pyxel.COLOR_RED)
-        pyxel.blt(botaoZerar[0]+18, botaoZerar[1]+18, 1, 0, 0, 40, 41)
+        pyxel.blt(botaoZerar[0]+18, botaoZerar[1]+12, 0, 0, 0, 40, 48, pyxel.COLOR_BLACK)
 
 App()
