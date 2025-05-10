@@ -56,6 +56,7 @@ class World_SNAKE:
                 else:
                     self.world_map[y].append(WorldItem_SNAKE.VAZIO) #falta de valor igual espaco vazio
     
+    #funcao de DEBUG dos valores do jogador snake
     def printSnake(self):
         print("Segmentos ativos: ", end="")
         for parte in self.SNAKE.corpo:
@@ -63,6 +64,7 @@ class World_SNAKE:
                 parte.posX, parte.posY, parte.direcao, parte.tipo, parte.frente, parte.costa
             ), end="")
 
+    #funcao de DEBUG dos valores do mapa do mundo
     def printWorld(self):
         print("Valores atuais no tilemap:")
         for y in range(self.ALTURA):
@@ -252,25 +254,6 @@ class World_SNAKE:
             return "cristal"
         elif ( self.world_map[posItemY][posItemX] == WorldItem_SNAKE.COMIDA):
             print("comida")
-            '''#verificando novamente posicao futura, ja que ao comer jogador ira aumentar 1 de tamanho
-            if ( direcao == 'w'):
-                posItemY -= 1
-            elif ( direcao == 'a'):
-                posItemX -= 1
-            elif ( direcao == 's'):
-                posItemY += 1
-            elif ( direcao == 'd'):
-                posItemX += 1
-            else:
-                return "invalido"
-            #se local de crescimento estiver livre entao aumentar em 1 os segmentos e mover cabeca
-            if ( self.tilemap.pget(posItemX, posItemY) not in [WorldItem_SNAKE.TIJOLO, WorldItem_SNAKE.CAIXA] and self.tilemap.pget(posItemX, posItemY) not in WorldItem_SNAKE.JOGADOR):
-                self.SNAKE.direcao = direcao
-                self.SNAKE.grow()
-                print("Yum yum...delicia!")
-                return "comida"
-            print("Nao posso comer! seria o meu fim...")
-            return "invalido"'''
         elif ( self.world_map[posItemY][posItemX] == WorldItem_SNAKE.VAZIO):
             print("Caminho livre...em frente!")
             return "vazio"
